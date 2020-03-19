@@ -1,7 +1,7 @@
 .navtopbar{
     background: #438EB9 !important;
     min-height: 20px !important;
-    background-image: url(http://thepatternlibrary.com/img/ao.gif) !important;
+
 }
 .navmenubar{
     background-image: url(http://thepatternlibrary.com/img/ao.gif) !important;
@@ -240,3 +240,46 @@ input[type=email], input[type=url], input[type=search], input[type=tel], input[t
 .ui-jqgrid tr.jqgfirstrow td {
     border-right:none!important
 }
+
+@media only screen and (max-width: 767px){.ui-pg-table.ui-common-table.ui-pager-table > tbody > tr > td:first-child{width: 0px !important;}}
+@media only screen and (max-width: 767px){.ui-jqgrid .ui-jqgrid-pager .ui-paging-pager{margin-left:-30px;}}
+    @media only screen and (max-width: 767px){.ui-pg-table.ui-common-table.ui-pager-table > tbody > tr > td:last-child{display: none;}}
+
+    @media only screen and (max-width: 400px) {
+        #breadcrumbs {
+            font-size: 9px !important;
+        }
+
+
+
+        .top_m, .btn-minier {
+            font-size: 10px !important;
+        }
+    }
+
+    @media only screen and (max-width: 600px){.sp-small{ display: none;}}
+
+
+.navbar{
+background-image: url(http://thepatternlibrary.com/img/ao.gif) !important;
+}
+
+.navtopbar {background-color: #222c2f !important; background-image: none !important;}
+
+.ui-jqgrid-view>.ui-jqgrid-titlebar {background-image: url(http://thepatternlibrary.com/img/ao.gif) !important;}
+
+.btn-white.btn-primary {color: #000000 !important;}
+
+.blue {color: #000000 !important;}
+
+.btn-white.btn-primary { border-color: #000000 !important;}
+
+@media only screen and (min-width: 992px){
+    .sidebar.h-sidebar .nav-list {
+        border-width: 0;
+        border-bottom: 1px solid #000000;
+    }}
+@media only screen and (max-width: 767px){#main_logo_img{width: 120px;}}
+
+.td-title {border-left:#000000 solid 3px !important; }
+

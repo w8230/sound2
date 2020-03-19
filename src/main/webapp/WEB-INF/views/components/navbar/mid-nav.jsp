@@ -6,15 +6,15 @@
     <div class="navbar-container ace-save-state" id="navbar-container" >
 
         <div class="col-lg-12">
-            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler2" data-target="#sidebar2" style="float:left; height: 20px; width: 20px; margin-top:16px; background-color: #20b398">
+            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler2" data-target="#sidebar2" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #28b3ea">
 
             </button>
-            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler" data-target="#sidebar" style="float:left; height: 20px; width: 20px; margin-top:16px; background-color: #7b62a5">
+            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler" data-target="#sidebar" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #ed5c47">
 
         </button>
 
             <a href="/" class="navbar-brand">
-                <img src="/ui-component/assets/images/logo@2x.png" width="140px">
+                <img src="/ui-component/assets/images/logo@2x.png" id="main_logo_img" width="140px">
             </a>
             <div class="form-group">
                 <a href="javascript:void(0);" class="navbar-brand top_m">
@@ -68,7 +68,7 @@
                                 </c:if>
 
                                     <c:if test="${main_list.menu_name eq '관리자'}">
-                                        <i class="menu-icon fa fa-asterisk"></i>
+                                        <i class="menu-icon fa fa-cogs"></i>
                                     </c:if>
                                     <c:if test="${main_list.menu_name eq '자재관리'}">
                                         <i class="menu-icon fa fa-cogs"></i>

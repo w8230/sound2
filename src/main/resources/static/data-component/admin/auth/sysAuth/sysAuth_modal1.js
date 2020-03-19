@@ -72,5 +72,5 @@ function modal_make1() {
                 }
             }
         ]
-    });
+    })
 }

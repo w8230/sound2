@@ -73,5 +73,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
     <script src="/data-component/common/es6-promise.auto.min.js"></script>
     <script src="/data-component/common/various.js"></script>
+    <script src="/ui-component/assets/js/jquery.ui.touch.js"></script>
 
 </head>

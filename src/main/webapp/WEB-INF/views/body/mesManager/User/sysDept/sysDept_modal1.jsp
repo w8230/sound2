@@ -7,7 +7,7 @@
         <div class="profile-info-row">
             <div class="profile-info-name"> 부서코드 </div>
             <div class="profile-info-value">
-                <input type="text" name="dept_code" class="form-control modal_value wt-px-150" autocomplete="off">
+                <input type="text" name="dept_code" class="form-control modal_value" autocomplete="off">
             </div>
         </div>
 

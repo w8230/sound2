@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<div class="col-lg-12" style="width: 70%;">
-    <img src="/ui-component/assets/images/main/main_img.png" class="center-block" style="height: 100%; width: 100%;"/>
+<div class="col-lg-12" style="width: 100%;">
+    <img src="/ui-component/assets/images/main/main_img.jpg" class="center-block" style="height: 100%; width: 100%;"/>
 
 </div>
 <%--<div class="page-header">--%>
