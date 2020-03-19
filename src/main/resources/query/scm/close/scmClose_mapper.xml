@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mes.Mapper.mesSCM.Close.CloseMapper">
+    <select id="scmPartCloseGet" resultType="com.mes.mesScm.Close.DTO.SCM_CLOSE_READY">
+        EXEC SP_SCM_CLOSE_READY_GET #{page},#{rows},#{keyword},#{keyword2}
+    </select>
+
+    <select id="scmPartCloseAdd" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SCM_CLOSE_ADD #{keyword},#{keyword2},#{keyword3}, #{user_code}
+    </select>
+
+    <select id="scmPartCloseSumListGet" resultType="com.mes.mesScm.Close.DTO.SCM_CLOSE">
+        EXEC SP_SCM_CLOSE_GET #{page},#{rows},#{start_date},#{end_date},#{keyword}
+    </select>
+
+    <select id="scmPartCloseSumListSubGet" resultType="com.mes.mesScm.Close.DTO.SCM_CLOSE_SUB">
+        EXEC SP_SCM_CLOSE_SUB_GET #{page},#{rows},#{keyword}
+    </select>
+
+    <select id="scmPartCloseCancelDel" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SCM_CLOSE_CANCEL #{close_no}
+    </select>
+</mapper>

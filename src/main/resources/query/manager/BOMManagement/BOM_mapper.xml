@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mes.Mapper.mesManager.BOM.BOMMapper">
+
+
+    <select id="sysPartNameGroupGet" resultType="com.mes.mesScm.Standard.DTO.SYS_COMMON2_CD">
+        	EXEC SP_SYS_COMMON2_GET #{page}, #{rows},#{keyword},#{keyword2}
+    </select>
+    <select id="sysPartNameGroupOneGet" resultType="com.mes.mesManager.BOM.DTO.SYS_COMMON2_CD">
+        	EXEC SP_SYS_COMMON2_ONE_GET #{idx}
+    </select>
+
+    <select id="sysPartNameGroupAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_COMMON2_ADD #{idx},#{code_value},'CODE',#{code_name1},#{code_name2},#{code_name3},#{code_name4},#{user_code},#{keyword}
+    </select>
+
+    <select id="sysPartNameGroupDel" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_COMMON2_DEL #{keyword}
+    </select>
+
+    <select id="sysPartGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_CD">
+        	EXEC SP_SYS_PART_GET #{page}, #{rows},#{keyword}, #{keyword2}, #{keyword3},#{keyword4},#{keyword5},#{keyword6}
+    </select>
+    <select id="sysPartDel" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_DEL #{keyword}
+    </select> <select id="sysPartOneGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_CD">
+        	EXEC SP_SYS_PART_GET 1, 1,'','','','',#{keyword},#{keyword2}
+    </select>
+
+    <select id="sysPartAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_ADD #{part_type},#{part_group1},#{part_group2},#{part_code},#{part_name},
+    	#{spec1},#{spec2},#{material},#{maker_code},#{supp_code},#{maker_code2},#{supp_code2},#{maker_code3},#{supp_code3},#{prod_type},#{material_type},#{loc_code},
+    	#{unit_code},#{lt},#{qc_level},#{max_qty},#{min_qty},#{ord_qty},#{user_code},#{keyword}
+    </select>
+
+
+    <select id="sysPartNameGroup2Get" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_GROUP2_CD">
+        	EXEC SP_SYS_PART_GROUP2_GET #{page}, #{rows},#{keyword},#{keyword2},''
+    </select>
+
+    <select id="sysPartNameGroup2OneGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_GROUP2_CD">
+        	EXEC SP_SYS_PART_GROUP2_GET #{page}, #{rows},#{keyword},#{keyword2},#{keyword3}
+    </select>
+
+
+    <select id="sysPartNameGroup2Add" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_GROUP2_ADD #{part_type_code},#{part_grp_code},#{part_grp_code2},#{part_grp_name2},#{remark},#{user_code},#{keyword}
+    </select>
+
+    <select id="sysPartNameGroup2Del" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_GROUP2_DEL #{keyword}
+    </select>
+
+    <select id="sysPartNameGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_NM_CD">
+        EXEC SP_SYS_PART_NM_GET #{page},#{rows},#{keyword},#{keyword2},#{keyword3},''
+    </select>
+
+    <select id="sysPartNameOneGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_NM_CD">
+        EXEC SP_SYS_PART_NM_GET 1,1,'','','',#{keyword}
+    </select>
+
+    <select id="sysPartNameAdd" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_PART_NM_ADD #{part_code},#{part_type},#{part_group1},#{part_group2},#{part_name},#{series},#{center_wire},#{frequency},#{jacket},#{prod_type1},#{center_wire1},#{route_code},#{user_code},#{remark},#{keyword}
+    </select>
+
+    <select id="sysPartNameDel" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_PART_NM_DEL #{keyword}
+    </select>
+
+    <select id="sysSPartAdd2" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_HPART_ADD2 #{keyword},#{keyword2},#{keyword3},#{keyword4},#{keyword5},#{user_code}
+    </select>
+
+    <select id="sysSPartGet" resultType="com.mes.mesManager.BOM.DTO.SYS_HPART_CD">
+        EXEC SP_SYS_HPART_GET #{page},#{rows},'','','',#{keyword4}
+    </select>
+
+    <select id="sysSPartAdd" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_HPART_ADD #{keyword},#{user_code}
+    </select>
+
+    <select id="sysSPartDel" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_HPART_DEL #{keyword}
+    </select>
+
+</mapper>

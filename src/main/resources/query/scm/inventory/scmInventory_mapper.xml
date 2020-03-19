@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mes.Mapper.mesSCM.Inventory.InventoryMapper">
+    <select id="scmStockListGet" resultType="com.mes.mesScm.Inventory.DTO.SCM_STOCK_LIST">
+        EXEC SP_SCM_STOCK_GET #{page},#{rows},#{keyword},#{keyword2},#{keyword3},#{keyword4},''
+    </select>
+
+    <select id="scmStockSumDayListGet" resultType="com.mes.mesScm.Inventory.DTO.SCM_STOCK_SUM_DAY">
+        EXEC SP_SCM_STOCK_GET_DAY #{page},#{rows},#{start_date},#{keyword},#{keyword2},#{keyword3},#{keyword4},''
+    </select>
+
+    <select id="scmStockSumMonthListGet" resultType="com.mes.mesScm.Inventory.DTO.SCM_STOCK_SUM_MONTH">
+        EXEC SP_SCM_STOCK_GET_MONTH #{page},#{rows},#{start_date},#{keyword},#{keyword2},#{keyword3},#{keyword4},''
+    </select>
+
+    <select id="scmStockRevListGet" resultType="com.mes.mesScm.Inventory.DTO.SCM_STOCK_REV_LIST">
+        EXEC SP_SCM_STOCK_REV_GET #{page},#{rows},#{start_date},#{stop_date},#{keyword},#{keyword2},#{keyword3},#{keyword4},''
+    </select>
+
+
+</mapper>

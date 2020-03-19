@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mes.Mapper.mesSCM.Half.HalfMapper">
+    <select id="scmHInListGet" resultType="com.mes.mesScm.Half.DTO.SCM_HIN">
+        EXEC SP_SCM_HIN_GET #{page},#{rows},#{start_date},#{end_date},#{keyword}
+    </select>
+
+    <select id="scmHOutListGet" resultType="com.mes.mesScm.Half.DTO.SCM_HOUT_SUB">
+        EXEC SP_SCM_HOUT_SUB_DATE_GET #{page},#{rows},#{start_date},#{end_date}
+    </select>
+
+    <select id="scmHInReadyGet" resultType="com.mes.mesScm.Half.DTO.SCM_HIN_READY">
+        EXEC SP_SCM_HIN_READY_GET #{page},#{rows},#{keyword}
+    </select>
+
+</mapper>

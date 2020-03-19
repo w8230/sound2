@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mes.Mapper.Auth.AuthMapper">
+    <select id="authMainSelect" resultType="com.mes.Common.Auth.Auth">
+		EXEC SP_SYS_AUTH_MENU_TREE_GET  '' ,#{user_code}
+   </select>
+    <select id="authSubSelect" resultType="com.mes.Common.Auth.Auth">
+   		EXEC SP_SYS_AUTH_MENU_TREE_GET  #{keyword} ,#{user_code}
+   </select>
+
+    <select id="menuAuth" resultType="com.mes.mesManager.Authority.DTO.SYSAuthProgram">
+   		EXEC SP_SYS_AUTH_MENU_GET  #{keyword} ,#{user_code}
+   </select>
+    <select id="loginAction" resultType="com.mes.Common.Interceptor.Session">
+        EXEC SP_SYS_LOGIN #{user_code} , #{user_pwd}
+    </select>
+</mapper>
+
+

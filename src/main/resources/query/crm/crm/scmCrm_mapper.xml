@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mes.Mapper.mesCrm.Crm.CrmMapper">
+    <select id="crmRecpAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_ORD_RECP_ADD
+    	#{ord_no},#{work_date},#{status1},#{status2},#{end_date},#{supp_code},#{end_supp_code},#{part_type},
+    	#{part_grp_code},#{part_code},#{work_type},#{connector1},#{connector2},#{part_length},#{qty},#{unit_type},#{tube},
+    	#{option1},#{option2},#{option3},#{remark},#{crm_type},#{delivery},#{delivery_corp},#{delivery_price},#{sale_type},
+		#{price_type},#{prod_type},#{sample},#{currency_type},#{unit_price},#{price},#{supp_ord_no},#{payment},#{supp_user_name},
+    	#{supp_tel_no},#{user_code},#{keyword}
+    </select>
+
+	<select id="crmProdOrderGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_ORD_RECP">
+		EXEC SP_CRM_ORD_RECP_GET #{page}, #{rows},#{start_date}, #{end_date}, ''
+    </select>
+
+	<select id="crmProdOrderOneGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_ORD_RECP">
+		EXEC SP_CRM_ORD_RECP_GET 1, 1,'', '', #{ord_no}
+    </select>
+
+	<select id="crmWorkListGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_ORD_RECP">
+		EXEC SP_CRM_ORD_RECP_PROFIT_GET  #{page}, #{rows}, #{start_date}, #{keyword2} , #{keyword} ,#{keyword3},#{keyword4},#{keyword5},''
+	</select>
+
+	<select id="crmWorkListOneGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_ORD_RECP">
+		EXEC SP_CRM_ORD_RECP_PROFIT_GET  1, 1, '', '' , '' ,'','','0',#{ord_no}
+	</select>
+
+
+	<select id="crmOrderRecpAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_ORD_RECP_ADD
+
+    	#{ord_no},
+    	#{work_date},
+    	#{status1},
+    	#{status2},
+
+    	#{end_date},
+    	#{supp_code},
+    	#{end_supp_code},
+    	#{part_type},
+    	#{part_group1},
+    	#{part_group2},
+    	#{part_code},
+
+    	#{work_type},
+    	#{connector1},
+    	#{connector2},
+    	#{part_length},
+    	#{length_type},
+
+    	#{qty},
+    	#{unit_type},
+    	#{tube},
+    	#{option1},
+    	#{option2},
+
+    	#{remark},
+    	 #{crm_type},
+    	#{delivery},
+    	#{delivery_corp},
+    	#{delivery_price},
+
+    	#{sale_type},
+    	#{price_type},
+    	#{prod_type},
+    	#{sample},
+    	#{currency_type},
+
+    	#{unit_price},
+    	#{price},
+    	#{supp_ord_no},
+    	#{supp_user_name},
+    	#{supp_tel_no},
+
+		#{delivery_addr},
+    	#{user_code},
+    	#{req_type},
+    	'I'
+    </select>
+
+	<select id="crmPlanGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_PLAN">
+		EXEC SP_CRM_PLAN_GET  #{page}, #{rows},#{keyword},#{keyword2},#{keyword3},'','G'
+	</select>
+	<select id="crmPlanOneGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_PLAN">
+		EXEC SP_CRM_PLAN_GET  1, 1,#{keyword},#{keyword2},'',#{keyword3},'O'
+	</select>
+	<select id="crmPlanAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_PLAN_ADD  #{plan_year},#{quarter},#{part_code},#{stock_qty},#{month1_plan1},#{month1_plan2},#{month1_plan3},#{month2_plan1},#{month2_plan2},#{month2_plan3},#{month3_plan1},#{month3_plan2},#{month3_plan3},#{user_code},#{keyword}
+    </select>
+
+	<select id="crmAssyCableGet" resultType="com.mes.mesCrm.Crm.DTO.SYS_ASSY_CABLE">
+		EXEC SP_SYS_ASSY_CABLE_GET #{page}, #{rows}, #{keyword}
+	</select>
+	<select id="crmAssyCableAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_ASSY_CABLE_ADD  #{cable_code}, #{part_code},#{user_code}
+    </select>
+	<select id="crmAssyCableDel" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_ASSY_CABLE_DEL  #{cable_code}, #{part_code}
+    </select>
+
+
+	<select id="crmOutListGet" resultType="com.mes.mesCrm.Crm.DTO.CRM_OUT_SUB">
+		EXEC SP_CRM_OUT_SUB_GET  #{page}, #{rows}, #{start_date}, #{end_date} , #{keyword}
+	</select>
+
+	<select id="crmProdOrderAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_PROD_ORDER_ADD  #{keyword},#{user_code}
+    </select>
+
+	<select id="crmProdOrderDel" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_PROD_ORDER_DEL  #{keyword}
+    </select>
+
+	<select id="crmWorkListAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_CRM_ORD_RECP_PROFIT_ADD  #{keyword},#{user_code}
+    </select>
+</mapper>

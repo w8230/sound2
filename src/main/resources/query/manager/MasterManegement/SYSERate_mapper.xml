@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mes.Mapper.mesManager.Master.MasterMapper">
+    <select id="sysERateGet" resultType="com.mes.mesManager.Master.DTO.SYSERate">
+        EXEC SP_SYS_ERATE_GET #{page},#{rows},#{start_date},#{end_date},#{keyword}
+    </select>
+
+    <select id="sysERateOneGet" resultType="com.mes.mesManager.Master.DTO.SYSERate">
+        EXEC SP_SYS_ERATE_GET 1,1,#{start_date},'',#{currency_code}
+    </select>
+
+    <select id="sysERateAdd" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_ERATE_ADD #{currency_code},#{start_date},#{stop_date},#{exch_rate},#{use_yn},#{user_code},#{keyword}
+    </select>
+
+    <select id="sysERateDel" resultType="com.mes.Common.DataTransferObject.Message">
+        EXEC SP_SYS_ERATE_DEL #{keyword}
+    </select>
+</mapper>
