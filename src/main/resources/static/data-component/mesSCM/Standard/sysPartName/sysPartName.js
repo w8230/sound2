@@ -7,7 +7,7 @@
 var main_data = {
     check: 'I',
     send_data: {},
-    readonly: ['auth_code'],
+    readonly: ['part_name_code'],
     auth:{}
 };
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
 // 조회 버튼
 function get_btn(page) {
     $("#mes_grid").setGridParam({ // 그리드 조회
-        url: '/sysAuthGet',
+        url: '/sysPartNameGet',
         datatype: "json",
         page: page,
         postData: main_data.send_data
@@ -53,8 +53,7 @@ function update_btn(jqgrid_data) {
         modal_reset(".modal_value", []); // 해당 클래스 내용을 리셋 시켜줌 ,데이터에 readonly 사용할거
 
         main_data.check = 'U'; // 수정인지 체크
-        jqgrid_data.dept_code = main_data.send_data.keyword; // 저장한데이터 dept_code 를 넣어 서 진행
-        ccn_ajax('/sysAuthOneGet', {keyword: jqgrid_data.auth_code}).then(function (data) { // user의 하나 출력
+        ccn_ajax('/sysPartNameOneGet', {keyword: jqgrid_data.part_name_code}).then(function (data) { // user의 하나 출력
             modal_edits('.modal_value', main_data.readonly, data); // response 값 출력
             $("#addDialog").dialog('open');
         });
@@ -74,7 +73,7 @@ function delete_btn() {
             if (confirm("삭제하겠습니까?")) {
                 main_data.check = 'D';
                 wrapWindowByMask2();
-                ccn_ajax("/sysAuthDelete", {keyword: ids.join(gu5)}).then(function (data) {
+                ccn_ajax("/sysPartNameDel", {keyword: ids.join(gu5)}).then(function (data) {
                     if (data.result === 'NG') {
                         alert(data.message);
                     } else {
@@ -98,7 +97,7 @@ function delete_btn() {
 
 
 function authcheck() {
-    ccn_ajax("/menuAuthGet", {keyword: "sysAuth"}).then(function (data) {
+    ccn_ajax("/menuAuthGet", {keyword: "sysPartName"}).then(function (data) {
         main_data.auth = data;
     });
 }
@@ -108,14 +107,13 @@ function jqGrid_main() {
     $("#mes_grid").jqGrid({
         datatype: "local",
         mtype: 'POST',
-        colNames : ['권한그룹코드','권한그룹명','등록자','등록일'],
+        colNames : ['품목명','등록자','등록일'],
         colModel : [
-            {name:'auth_code',index:'auth_code',key: true ,sortable: false,width:150,fixed: true},
-            {name:'auth_name',index:'auth_name',sortable: false,width:200,fixed: true},
+            {name:'part_name_code',index:'part_name_code',key: true ,sortable: false,width:150,fixed: true},
             {name:'user_name',index:'user_name',sortable: false,width:150,fixed: true},
             {name:'update_date',index:'update_date',formatter:formmatterDate,sortable: false,width:180,fixed: true}
         ],
-        caption: "권한그룹관리 | MES",
+        caption: "품목명관리 | MES",
         autowidth: true,
         height: 600,
         pager: '#mes_grid_pager',

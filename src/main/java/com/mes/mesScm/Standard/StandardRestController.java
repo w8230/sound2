@@ -18,6 +18,61 @@ public class StandardRestController {
     @Autowired
     private StandardService standardService;
 
+
+
+    @RequestMapping(value = "/sysLocGet", method = RequestMethod.POST)
+    public RESTful sysLocGet(HttpServletRequest req, Page p) {
+        return standardService.sysLocGet(req, p);
+    }
+
+    @RequestMapping(value = "/sysLocAll2Get", method = RequestMethod.POST)
+    public List<sysLoc> sysLocAllGet(HttpServletRequest req, Page p) {
+        return standardService.sysLocAllGet(req, p);
+    }
+
+    @RequestMapping(value = "/sysLocOneGet", method = RequestMethod.POST)
+    public sysLoc sysLocOneGet(HttpServletRequest req, Page p) {
+        return standardService.sysLocOneGet(req, p);
+    }
+
+    @RequestMapping(value = "/sysLocAdd", method = RequestMethod.POST)
+    public Message sysLocAdd(HttpServletRequest req, sysLoc vo) {
+        return standardService.sysLocAdd(req, vo);
+    }
+
+    @RequestMapping(value = "/sysLocDelete", method = RequestMethod.POST)
+    public Message sysLocDelete(Page p, HttpServletRequest req) {
+        return standardService.sysLocDelete(p, req);
+
+    }
+
+
+    @RequestMapping(value = "/sysPartNameGet", method = RequestMethod.POST)
+    public RESTful sysPartNameGet( Page p) {
+        return standardService.sysPartNameGet( p);
+    }
+
+    @RequestMapping(value = "/sysPartNameOneGet", method = RequestMethod.POST)
+    public SYS_PART_NAME sysPartNameOneGet( Page p) {
+        return standardService.sysPartNameOneGet( p);
+    }
+
+    @RequestMapping(value = "/sysPartNameAdd", method = RequestMethod.POST)
+    public Message sysPartNameAdd(HttpServletRequest req, SYS_PART_NAME spn) {
+        return standardService.sysPartNameAdd(req, spn);
+    }
+
+    @RequestMapping(value = "/sysPartNameDel", method = RequestMethod.POST)
+    public Message sysPartNameDel(SYS_PART_NAME spn) {
+        return standardService.sysPartNameDel(spn);
+
+    }
+
+
+
+
+
+
     @RequestMapping(value = "/getPartType", method = RequestMethod.POST)
     public List<PartType> getPartType(HttpServletRequest req) {
         return standardService.getPartType(req);
@@ -47,31 +102,7 @@ public class StandardRestController {
     }
 
 
-    @RequestMapping(value = "/sysLocGet", method = RequestMethod.POST)
-    public RESTful sysLocGet(HttpServletRequest req, Page p) {
-        return standardService.sysLocGet(req, p);
-    }
 
-    @RequestMapping(value = "/sysLocAll2Get", method = RequestMethod.POST)
-    public List<sysLoc> sysLocAllGet(HttpServletRequest req, Page p) {
-        return standardService.sysLocAllGet(req, p);
-    }
-
-    @RequestMapping(value = "/sysLocOneGet", method = RequestMethod.POST)
-    public sysLoc sysLocOneGet(HttpServletRequest req, Page p) {
-        return standardService.sysLocOneGet(req, p);
-    }
-
-    @RequestMapping(value = "/sysLocAdd", method = RequestMethod.POST)
-    public Message sysLocAdd(HttpServletRequest req, sysLoc vo) {
-        return standardService.sysLocAdd(req, vo);
-    }
-
-    @RequestMapping(value = "/sysLocDelete", method = RequestMethod.POST)
-    public Message sysLocDelete(Page p, HttpServletRequest req) {
-        return standardService.sysLocDelete(p, req);
-
-    }
     @RequestMapping(value = "/sysBPartAdd", method = RequestMethod.POST)
     public Message sysBPartAdd(HttpServletRequest req, sysBPart vo) {
         return standardService.sysBPartAdd(req, vo);

@@ -54,4 +54,19 @@
     </select>
 
 
+    <select id="sysPartNameGet" resultType="com.mes.mesScm.Standard.DTO.SYS_PART_NAME">
+        	EXEC SP_SYS_PART_NAME_GET #{page}, #{rows},''
+    </select>
+
+    <select id="sysPartNameOneGet" resultType="com.mes.mesScm.Standard.DTO.SYS_PART_NAME">
+        	EXEC SP_SYS_PART_NAME_GET 1, 1,#{keyword}
+    </select>
+
+    <select id="sysPartNameAdd" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_NAME_ADD #{part_name_code},#{user_code},#{keyword}
+    </select>
+
+    <select id="sysPartNameDel" resultType="com.mes.Common.DataTransferObject.Message">
+    	EXEC SP_SYS_PART_NAME_DEL #{keyword}
+    </select>
 </mapper>

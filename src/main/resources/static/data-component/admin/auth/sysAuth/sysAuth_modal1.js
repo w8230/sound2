@@ -1,6 +1,7 @@
 ////////////////////////////시작 함수/////////////////////////////////////
 function modal_start1() {
     modal_make1();
+    add_click_btn();
 }
 
 ////////////////////////////클릭 함수/////////////////////////////////////
@@ -47,6 +48,13 @@ function effectiveness1(modal_objact) { // 유효성 검사
     }
 }
 
+function add_click_btn() {
+     $(document).on("keypress",'.modal_value',function (e) {
+         if (e.which == 13){
+             addUdate_btn();
+         }
+     });
+}
 
 function modal_make1() {
     $("#addDialog").dialog({

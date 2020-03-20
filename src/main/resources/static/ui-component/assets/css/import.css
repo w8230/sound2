@@ -283,3 +283,65 @@ background-image: url(http://thepatternlibrary.com/img/ao.gif) !important;
 
 .td-title {border-left:#000000 solid 3px !important; }
 
+.no-skin .nav-list li.active>a:after {
+    border-right-color: #000000;
+}
+
+.profile-user-info-striped .profile-info-name {
+    color: #1d1d1d;
+    background-color: #f2f2f2;
+    border-top: 1px solid #F7FBFF;
+}
+
+.ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-jqdialog-titlebar, .ui-jqdialog .ui-dialog-titlebar, .ui-jqdialog .ui-jqdialog-titlebar {
+    background-color: #F1F1F1;
+    font-size: 16px;
+    color: #000000;
+}
+
+@media only screen and (min-width: 992px){
+    .no-skin .sidebar.h-sidebar .nav-list>li.active, .no-skin .sidebar.h-sidebar .nav-list>li.active+li, .no-skin .sidebar.h-sidebar .nav-list>li:hover+li.active {
+        border-left-color: #868383;
+    }}
+
+.no-skin .nav-list>li>a {
+    background-color: #F8F8F8;
+    color: #696969;
+}
+.no-skin .nav-list>li.active>a {
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.no-skin .nav-list>li .submenu>li.active>a {
+    color: #000000;
+}
+.no-skin .nav-list>li:hover>a {
+    background-color: #FFF;
+    color: #000000;
+}
+
+.no-skin .nav-list>li .submenu>li>a:hover {
+    color: #000000;
+    background-color: #F1F5F9;
+}
+
+.no-skin .nav-list>li.open>a {
+    background-color: #FAFAFA;
+    color: #000000;
+}
+
+.sp-title {
+    font-size: 13px !important;
+    font-weight: bold;
+    color: #000000 !important;
+}
+
+.ui-jqgrid-sortable {
+    color: #000000 !important;
+}
+
+.nav-list>li:before {
+    background-color: #000000;
+}

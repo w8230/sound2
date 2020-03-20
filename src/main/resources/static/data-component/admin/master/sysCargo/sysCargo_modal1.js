@@ -3,6 +3,7 @@
 function modal_start1() {
     modal_make1();
     selectBox_modal1();
+    add_click_btn();
 }
 
 
@@ -35,6 +36,13 @@ function addUdate_btn() {
         }
     }
 
+}
+function add_click_btn() {
+    $(document).on("keypress",'.modal_value',function (e) {
+        if (e.which == 13){
+            addUdate_btn();
+        }
+    });
 }
 
 ////////////////////////////호출 함수/////////////////////////////////////

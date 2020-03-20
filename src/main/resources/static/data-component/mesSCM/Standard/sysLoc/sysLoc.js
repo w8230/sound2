@@ -27,7 +27,6 @@ $(document).ready(function () {
 
 function get_btn(page) {
     main_data.send_data = value_return(".condition_main");
-    main_data.send_data.keyword = 'M100';
     main_data.send_data_post = main_data.send_data;
     $("#mes_grid").setGridParam({
         url: '/sysLocGet',
@@ -49,10 +48,9 @@ function get_btn_post(page) {
 function add_btn() {
     if (main_data.auth.check_add !="N") {
         modal_reset(".modal_value", main_data.readonly);
-        // modalValuePush("#cargo_select","#cargo_code","#cargo_name");
+        modalValuePush("#cargo_select","#cargo_code","#cargo_name");
         main_data.check = 'I';
-        $('#cargo_name').val("자재창고");
-        $('#cargo_code').val("M100");
+
 
         $("#addDialog").dialog('open');
     } else {

@@ -26,7 +26,7 @@
         EXEC SP_SYS_COMMON_GET 0,0,#{keyword}, '','Y'
     </select>
     <select id="sysPartTypeGet" resultType="com.mes.Common.Various.DTO.SYSPartType">
-        EXEC SP_SYS_PART_TYPE_GET #{keyword},''
+        EXEC SP_SYS_PART_TYPE_GET #{keyword}
     </select>
     <select id="sysPartTypeOneGet" resultType="com.mes.Common.Various.DTO.SYSPartType">
         EXEC SP_SYS_PART_TYPE_GET #{keyword},#{keyword2}

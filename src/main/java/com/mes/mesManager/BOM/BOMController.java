@@ -11,13 +11,9 @@ public class BOMController {
     @RequestMapping(value = "/sysPartNameGroup2")
     public String sysPartNameGroup2() { return "mesManager/BOM/sysPartNameGroup2/sysPartNameGroup2"; }
 
-    @RequestMapping(value = "/sysPartName")
-    public String sysPartName() { return "mesManager/BOM/sysPartName/sysPartName"; }
 
-    @RequestMapping(value = "/sysPart")
-    public String sysPart() {
-        return "mesManager/BOM/sysPart/sysPart";
-    }
+
+
 
     @RequestMapping(value = "/sysSPart")
     public String sysSPart() {

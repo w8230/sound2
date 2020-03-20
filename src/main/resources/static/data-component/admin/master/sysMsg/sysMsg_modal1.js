@@ -2,6 +2,7 @@
 
 function modal_start1() {
     modal_make1();
+    add_click_btn();
 }
 
 ////////////////////////////클릭 함수/////////////////////////////////////
@@ -59,6 +60,15 @@ function modal_make1() {
         ]
     })
 }
+
+function add_click_btn() {
+    $(document).on("keypress",'.modal_value',function (e) {
+        if (e.which == 13){
+            addUdate_btn();
+        }
+    });
+}
+
 function effectiveness1(modal_objact) {
     if (modal_objact.msg_code === '') {
         alert("메세지코드를 입력해주세요");

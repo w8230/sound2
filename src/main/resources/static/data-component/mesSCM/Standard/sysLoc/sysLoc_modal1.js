@@ -1,6 +1,7 @@
 ////////////////////////////시작 함수/////////////////////////////////////
 function modal_start1() {
     modal_make1();
+    add_click_btn();
 }
 
 
@@ -14,9 +15,7 @@ function addUdate_btn() {
             text = '수정하겠습니까?';
         }
         if (confirm(text)) {
-
             modal_objact.keyword = main_data.check;
-            console.log(modal_objact);
             ccn_ajax("/sysLocAdd", modal_objact).then(function (data) {
                 if (data.result === 'NG') {
                     alert(data.message);
@@ -34,6 +33,14 @@ function addUdate_btn() {
         }
     }
 
+}
+
+function add_click_btn() {
+    $(document).on("keypress",'.modal_value',function (e) {
+        if (e.which == 13){
+            addUdate_btn();
+        }
+    });
 }
 ////////////////////////////호출 함수/////////////////////////////////////
 function modal_make1() {

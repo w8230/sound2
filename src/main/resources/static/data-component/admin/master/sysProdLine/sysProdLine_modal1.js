@@ -3,6 +3,7 @@
 function modal_start1() {
     modal_make1();
     selectBox_modal1();
+    add_click_btn();
 }
 
 ////////////////////////////클릭 함수/////////////////////////////////////
@@ -33,6 +34,15 @@ function addUdate_btn() {
         }
     }
 }
+
+function add_click_btn() {
+    $(document).on("keypress",'.modal_value',function (e) {
+        if (e.which == 13){
+            addUdate_btn();
+        }
+    });
+}
+
 ////////////////////////////호출 함수/////////////////////////////////////
 //모달생성
 function modal_make1() {
@@ -82,6 +92,8 @@ function modal_make1() {
         }
     })
 }
+
+
 
 function selectBox_modal1() {
     select_makes("#dept_select", "/sysDeptAllGet", "dept_code", "dept_name");

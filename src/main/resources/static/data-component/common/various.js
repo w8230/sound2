@@ -280,6 +280,9 @@ function select_makes_sub(tag,url,value,text,data,what) {
 	});
 }
 
+
+
+
 function select_makes_sub_ajax(tag,url,value,text,data){
 	return new Promise(function (resolve, reject) {
 		$(tag).empty();
@@ -334,6 +337,39 @@ function select_makes_sub_ajax2(tag,url,value,text,data,what){
 		});
 	});
 }
+
+
+
+function select_makes_base(tag,url,value,text,data,what){
+	return new Promise(function (resolve, reject) {
+		$(tag).empty();
+		if (what === "Y"){
+			$(tag).append($("<option></option>").text("전체").val(""));
+		}else if (what === 'N'){
+			$(tag).append($("<option></option>").text("선택안함").val(""));
+		}
+		$.ajax({
+			url: url,
+			type: 'POST',
+			async: true,
+			dataType: "json",
+			data:data,
+			success: function (data2) {
+				var option = null
+				for (var j = 0; j < data2.length; j++) {
+					option = $("<option></option>").text(data2[j][text]).val(data2[j][value]);
+					$(tag).append(option);
+				}
+				$(tag).select2();
+				resolve("성공");
+			},
+			error: function () {
+				reject(new Error("Request is failed"));
+			}
+		});
+	});
+}
+
 
 function ccn_ajax(url,data){
 	return new Promise(function (resolve, reject) {

@@ -21,12 +21,13 @@ var array =
         {code: "sysBOMList", title: '관리자', sub: '마스터관리', name: 'BOM현황'},
         {code: "sysPartNameGroup", title: '관리자', sub: 'BOM관리', name: '유형관리'},
         {code: "sysPartNameGroup2", title: '관리자', sub: 'BOM관리', name: '제품군관리'},
-        {code: "sysPartName", title: '관리자', sub: 'BOM관리', name: '제품명등록'},
-        {code: "sysPart", title: '관리자', sub: 'BOM관리', name: '자재등록'},
+
+        
         {code: "sysSPart", title: '관리자', sub: 'BOM관리', name: '제품등록'},
 
         // 자재관리
-
+        {code: "sysPart", title: '자재관리', sub: '기준정보', name: '품목정보관리'},
+        {code: "sysPartName", title: '관리자', sub: '기준정보', name: '품목명관리'},
         {code: "sysLoc", title: '자재관리', sub: '기준정보', name: '로케이션관리'},
         {code: "sysPartPrice", title: '자재관리', sub: '기준정보', name: '자재단가관리'},
         {code: "scmReqOrder", title: '자재관리', sub: '구매관리', name: '구매요청현황'},
@@ -288,3 +289,15 @@ function viewBoard(idx){
         }
     });
 }
+
+
+var filter = "win16|win32|win64|mac|macintel";
+var pmCheck = 'Y';
+if ( navigator.platform ) {
+    if ( filter.indexOf( navigator.platform.toLowerCase() ) >= 0 ) {
+        pmCheck = 'Y';
+    } else {
+        pmCheck = 'N';
+    }
+}
+

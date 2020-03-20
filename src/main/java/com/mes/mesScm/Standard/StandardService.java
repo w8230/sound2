@@ -164,4 +164,22 @@ public class StandardService extends ReturnFunction {
         scc.setSite_code(getSessionData(req).getSite_code());
         return scmStandardMapper.sysPartNameGroupSubOneGet(scc);
     }
+
+    public RESTful sysPartNameGet(Page p) {
+        List<SYS_PART_NAME> rows = scmStandardMapper.sysPartNameGet(p);
+        return getListData(rows , p);
+    }
+
+    public SYS_PART_NAME sysPartNameOneGet(Page p) {
+        return scmStandardMapper.sysPartNameOneGet(p);
+    }
+
+    public Message sysPartNameAdd(HttpServletRequest req, SYS_PART_NAME spn) {
+        spn.setUser_code(getSessionData(req).getUser_code());
+        return scmStandardMapper.sysPartNameAdd(spn);
+    }
+
+    public Message sysPartNameDel(SYS_PART_NAME spn) {
+        return scmStandardMapper.sysPartNameDel(spn);
+    }
 }
