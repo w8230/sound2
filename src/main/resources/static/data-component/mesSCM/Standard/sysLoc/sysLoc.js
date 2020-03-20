@@ -16,7 +16,7 @@ var main_data = {
 $(document).ready(function () {
     jqGrid_main();
     jqGridResize('#mes_grid', $('#mes_grid').closest('[class*="col-"]'));
-    // selectBox();
+     selectBox();
     modal_start1();
     authcheck();
     jqgridPagerIcons();
@@ -115,10 +115,10 @@ function authcheck() {
     });
 }
 
-// function selectBox() {
-//     select_makes("#cargo_select", "/sysCargoBAllGet", "cargo_code", "cargo_name");
-//
-// }
+function selectBox() {
+    select_makes("#cargo_select", "/sysCargoBAllGet", "cargo_code", "cargo_name");
+
+}
 
 function jqGrid_main() {
     $('#mes_grid').jqGrid({
