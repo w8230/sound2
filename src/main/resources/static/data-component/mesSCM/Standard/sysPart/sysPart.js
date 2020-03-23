@@ -6,9 +6,10 @@
 
 var main_data = {
     check: 'I',
+    check2:'Y',
     send_data: {},
     send_data_post: {},
-    readonly: [],
+    readonly: ['part_code'],
     auth:{},
     condition_data:{}
 };
@@ -30,19 +31,21 @@ $(document).ready(function () {
 
 function add_btn() {
     if (main_data.auth.check_add !="N") {
+        main_data.check = 'I';
 
         main_data.condition_data = value_return(".condition_main");
 
 
         modal_reset(".modal_value", main_data.readonly);
-        $("#part_name").val(main_data.condition_data.keyword4);
-        $("select[name=prod_type] option:eq(0)").prop("selected", true).trigger("change");
-        $("select[name=material_type] option:eq(0)").prop("selected", true).trigger("change");
+        //$("#part_name").val(main_data.condition_data.keyword4);
+        $("select[name=part_name_code] option:eq(0)").prop("selected", true).trigger("change");
+        $("select[name=part_type] option:eq(0)").prop("selected", true).trigger("change");
+        $("select[name=cargo_code] option:eq(0)").prop("selected", true).trigger("change");
         $("select[name=loc_code] option:eq(0)").prop("selected", true).trigger("change");
         $("select[name=unit_code] option:eq(0)").prop("selected", true).trigger("change");
         $("select[name=qc_level] option:eq(0)").prop("selected", true).trigger("change");
 
-        main_data.check = 'I';
+
 
 
         $("#addDialog").dialog('open');
@@ -77,11 +80,18 @@ function get_btn_post(page) {
 
 function update_btn(jqgrid_data) {
     if (main_data.auth.check_edit !="N") {
-        modal_reset(".modal_value", []);
         main_data.check = 'U';
+        main_data.check2 = 'N';
+        modal_reset(".modal_value", []);
+
         ccn_ajax('/sysPartOneGet', {keyword:jqgrid_data.part_code}).then(function (data) {
             modal_edits('.modal_value', main_data.readonly,data); // response 값 출력
-            $("#addDialog").dialog('open');
+            select_makes_base('#modal_loc_code_select', '/sysLocAllGet', "loc_code", "loc_name", {keyword: data.cargo_code}, '').then(function (data2) {
+
+                $("#modal_loc_code_select").val(data.loc_code).trigger("change");
+                main_data.check2 = 'Y';
+                $("#addDialog").dialog('open');
+            });
         });
     } else {
         alert("수정권한이 없습니다.");
@@ -143,17 +153,18 @@ function jqGrid_main() {
     $('#mes_grid').jqGrid({
         datatype: "local",
         mtype: 'POST',
-        colNames: ['구분','품번','품명','규격','단위','창고','위치','품질레벨','등록자','등록일시'],
+        colNames: ['구분','품번','품명','규격','업체','단위','창고','위치','품질레벨','등록자','등록일시'],
         colModel: [
-            {name: 'part_type_name', index: 'part_type_name', sortable: false, width: 150,fixed: true},
-            {name: 'part_code', index: 'part_code', key:true, sortable: false, width: 150,fixed: true},
+            {name: 'part_type_name', index: 'part_type_name', sortable: false, width: 60,fixed: true},
+            {name: 'part_code', index: 'part_code', key:true, sortable: false, width: 100,fixed: true},
             {name: 'part_name', index: 'part_name', sortable: false, width: 150,fixed: true},
             {name: 'spec', index: 'spec', sortable: false, width: 150,fixed: true},
+            {name: 'supp_name', index: 'supp_name', sortable: false, width: 150,fixed: true},
             {name: 'unit_name', index: 'unit_name', sortable: false, width: 100,fixed: true},
             {name: 'cargo_name', index: 'cargo_name', sortable: false, width: 150,fixed: true},
             {name: 'loc_name', index: 'loc_name', sortable: false, width: 100,fixed: true},
-            {name: 'qc_level_name', index: 'qc_level_name', sortable: false, width: 150,fixed: true},
-            {name: 'user_name', index: 'user_name', sortable: false, width: 150,fixed: true},
+            {name: 'qc_level_name', index: 'qc_level_name', sortable: false, width: 100,fixed: true},
+            {name: 'user_name', index: 'user_name', sortable: false, width: 100,fixed: true},
             {name: 'update_date', index: 'update_date', width: 180, sortable: false, formatter: formmatterDate,fixed: true}
 
 
@@ -183,20 +194,4 @@ function jqGrid_main() {
                 $("table#mes_grid tr.jqgfirstrow").css("height","0px");
         }
     }).navGrid('#mes_grid_pager', {search: false, add: false, edit: false, del: false});
-}
-
-function effectiveness_main(data) {
-    if (data.keyword2 === "" || data.keyword2 === null){
-        alert("품목군을 다시 선택해주세요");
-        return false;
-    } else if (data.keyword3 === "" || data.keyword3 === null){
-        alert("제품군을 다시 선택해주세요");
-        return false;
-    } else if (data.keyword4 === "" || data.keyword4 === null){
-        alert("품명을 선택해주세요");
-        return false;
-    } else {
-        return  true;
-    }
-    
 }

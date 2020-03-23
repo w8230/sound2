@@ -13,15 +13,13 @@ import com.mes.mesManager.Authority.DTO.SYSAuthProgram;
 import com.mes.mesManager.BOM.DTO.SYS_COMMON2_CD;
 import com.mes.mesManager.BOM.DTO.SYS_PART_GROUP2_CD;
 import com.mes.mesManager.BOM.DTO.SYS_PART_NM_CD;
+import com.mes.mesManager.Master.DTO.SYSCargo;
 import com.mes.mesManager.Master.DTO.SYSCommon;
 import com.mes.mesManager.Master.DTO.SYSProdLine;
 import com.mes.mesPop.Standard.DTO.POP_LINE_USER_CD;
 import com.mes.mesPop.Standard.DTO.POP_ROUTE_CD;
 import com.mes.mesQms.Standard.DTO.SYS_QC_ITEM;
-import com.mes.mesScm.Standard.DTO.SYS_PART_GROUP;
-import com.mes.mesScm.Standard.DTO.sysBPart;
-import com.mes.mesScm.Standard.DTO.sysBPartGroup;
-import com.mes.mesScm.Standard.DTO.sysLoc;
+import com.mes.mesScm.Standard.DTO.*;
 import com.mes.mesTpm.Machine.DTO.TPM_MACHINE_CD;
 import com.mes.mesTpm.RegItem.DTO.TPM_REG_ITEM_CD;
 import com.mes.mesWms.Stock.DTO.WMS_STOCK_TOTAL;
@@ -172,8 +170,7 @@ public class VariousService extends ReturnFunction {
         return variousMapper.popRouteGroupAllGet(p);
     }
 
-    public List<SYS_PART_NM_CD> sysPartNameAllGet(HttpServletRequest req, Page p) {
-        p.setSite_code(getSessionData(req).getSite_code());
+    public List<SYS_PART_NAME> sysPartNameAllGet(HttpServletRequest req, Page p) {
         return variousMapper.sysPartNameAllGet(p);
     }
 
@@ -199,5 +196,9 @@ public class VariousService extends ReturnFunction {
             wst.setQty(0);
         }
         return wst;
+    }
+
+    public List<SYSCargo> sysCargoAllGet(HttpServletRequest req, Page p) {
+        return variousMapper.sysCargoAllGet(p);
     }
 }

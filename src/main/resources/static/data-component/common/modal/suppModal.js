@@ -54,7 +54,8 @@ function suppModal_make() {
     $("#supp-search-dialog").dialog({
         autoOpen:false,
         modal: true,
-        minWidth:1100,
+
+        minWidth:600,
         height: 'auto',
         resizable: false,
         open: function () {

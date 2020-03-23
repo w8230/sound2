@@ -17,9 +17,7 @@
                     </td>
                     <td class="wt-px-100 t-align-c td-title padding-a-0" id="part_type">구분</td>
                     <td class="wt-px-200">
-                        <select id="part_type_select" name="keyword2" class="form-control keyword condition_main" onchange="select_type_change(this.value);"  style="width:100%">
-                            <option value="D" >자재</option>
-                            <option value="A">상품</option>
+                        <select id="part_type_select" name="keyword2" class="form-control keyword condition_main"  style="width:100%">
                         </select>
                     </td>
                     <td></td>

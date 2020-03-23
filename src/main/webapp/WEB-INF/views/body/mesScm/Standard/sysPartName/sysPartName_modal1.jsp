@@ -5,9 +5,15 @@
 <div id="addDialog" title="품목명관리" style="display: none">
     <div class="profile-user-info profile-user-info-striped">
         <div class="profile-info-row">
-            <div class="profile-info-name"> 품목명 </div>
+            <div class="profile-info-name"> 품목명코드 </div>
             <div class="profile-info-value">
                 <input type="text" name="part_name_code" class="form-control modal_value" autocomplete="off">
+            </div>
+        </div>
+        <div class="profile-info-row">
+            <div class="profile-info-name"> 품목명 </div>
+            <div class="profile-info-value">
+                <input type="text" name="part_name" class="form-control modal_value" autocomplete="off">
             </div>
         </div>
     </div>

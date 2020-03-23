@@ -182,4 +182,22 @@ public class StandardService extends ReturnFunction {
     public Message sysPartNameDel(SYS_PART_NAME spn) {
         return scmStandardMapper.sysPartNameDel(spn);
     }
+
+    public RESTful sysPartGet(HttpServletRequest req, Page p) {
+        List<SYS_PART_CD> rows = scmStandardMapper.sysPartGet(p);
+        return getListData(rows , p);
+    }
+
+    public SYS_PART_CD sysPartOneGet(HttpServletRequest req, Page p) {
+        return scmStandardMapper.sysPartOneGet(p);
+    }
+
+    public Message sysPartAdd(HttpServletRequest req, SYS_PART_CD spc) {
+        spc.setUser_code(getSessionData(req).getUser_code());
+        return scmStandardMapper.sysPartAdd(spc);
+    }
+
+    public Message sysPartDel(HttpServletRequest req, SYS_PART_CD spc) {
+        return scmStandardMapper.sysPartDel(spc);
+    }
 }

@@ -8,7 +8,7 @@
 		EXEC [SP_SYS_BPART_GROUP_GET]  0,0,#{keyword},''
    </select>
     <select id="sysLocAllGet" resultType="com.mes.mesScm.Standard.DTO.sysLoc">
-		EXEC [SP_SYS_LOC_GET]  0,0,'',''
+		EXEC [SP_SYS_LOC_GET]  0,0,'',#{keyword}
    </select>
     <select id="sysCommonUnitGet" resultType="com.mes.mesManager.Master.DTO.SYSCommon">
 		EXEC [SP_SYS_COMMON_GET]  0,0,'UNIT','','Y'
@@ -92,8 +92,8 @@
         EXEC SP_POP_ROUTE_GET 0,0,'',#{keyword}
     </select>
 
-    <select id="sysPartNameAllGet" resultType="com.mes.mesManager.BOM.DTO.SYS_PART_NM_CD">
-        EXEC SP_SYS_PART_NM_GET 0,0,#{keyword},#{keyword2},#{keyword3},''
+    <select id="sysPartNameAllGet" resultType="com.mes.mesScm.Standard.DTO.SYS_PART_NAME">
+        EXEC SP_SYS_PART_NAME_GET 0,0,''
     </select>
 
 
@@ -110,6 +110,12 @@
         EXEC SP_WMS_STOCK_TOTAL_GET #{keyword},#{keyword2}
     </select>
 
+
+
+
+    <select id="sysCargoAllGet" resultType="com.mes.mesManager.Master.DTO.SYSCargo">
+        EXEC SP_SYS_CARGO_GET 0,0,'','Y'
+    </select>
 </mapper>
 
 

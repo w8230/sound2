@@ -107,9 +107,10 @@ function jqGrid_main() {
     $("#mes_grid").jqGrid({
         datatype: "local",
         mtype: 'POST',
-        colNames : ['품목명','등록자','등록일'],
+        colNames : ['품목명코드','품목명','등록자','등록일'],
         colModel : [
             {name:'part_name_code',index:'part_name_code',key: true ,sortable: false,width:150,fixed: true},
+            {name:'part_name',index:'part_name',sortable: false,width:150,fixed: true},
             {name:'user_name',index:'user_name',sortable: false,width:150,fixed: true},
             {name:'update_date',index:'update_date',formatter:formmatterDate,sortable: false,width:180,fixed: true}
         ],
