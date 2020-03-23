@@ -71,6 +71,9 @@
             text-align: right;
             font-size: 12px;
         }
+        .imageArea{
+            border-right: 1px solid #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -113,19 +116,13 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" class="contentArea">
-                <img src="/ui-component/imagesNew/test.jpg"/>
-            </td>
+            <td colspan="4" class="contentArea"></td>
         </tr>
         <tr>
-            <td colspan="4" class="contentArea">
-                <img src="/ui-component/imagesNew/test.jpg"/>
-            </td>
+            <td colspan="4" class="contentArea"></td>
         </tr>
         <tr>
-            <td colspan="4" class="contentArea">
-                <img src="/ui-component/imagesNew/test.jpg"/>
-            </td>
+            <td colspan="4" class="contentArea"></td>
         </tr>
         <tr>
             <td colspan="4" class="LastContentArea">
