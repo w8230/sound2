@@ -40,6 +40,7 @@ public class Interceptor implements WebMvcConfigurer {
                 .excludePathPatterns("/boardFileUploader")
                 .excludePathPatterns("/addBoardList")
                 .excludePathPatterns("/bdr_*")
+                .excludePathPatterns("/test3")
                 .excludePathPatterns("/ImgUpload")
                 .excludePathPatterns("/bcd")
                 .excludePathPatterns("/getNM")

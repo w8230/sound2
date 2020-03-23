@@ -1,6 +1,7 @@
 package com.mes.test;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,5 +18,9 @@ public class TestController {
         req.setAttribute("ok","ok");
 
         return "views/body/Test/test1/test/testimg";
+    }
+    @GetMapping("/test3")
+    public String test3() {
+        return "test3";
     }
 }
