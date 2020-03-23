@@ -6,11 +6,11 @@
     <div class="navbar-container ace-save-state" id="navbar-container" >
 
         <div class="col-lg-12">
-            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler2" data-target="#sidebar2" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #28b3ea">
-
+            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler2" data-target="#sidebar2" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #00000033">
+                <i class="fa fa-list"></i>
             </button>
-            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler" data-target="#sidebar" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #ed5c47">
-
+            <button type="button" class="navbar-toggle menu-toggler navbar-brand" id="menu-toggler" data-target="#sidebar" style="float:left; height: 30px; width: 30px; margin-top:16px; background-color: #00000033">
+                <i class="fa fa-folder-open-o"></i>
         </button>
 
             <a href="/" class="navbar-brand">
