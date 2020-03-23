@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>작업의뢰서</title>
+    <script src="/ui-component/assets/js/jquery-2.1.4.min.js"></script>
     <style>
         table {
             width: 100%;
@@ -74,10 +75,27 @@
         .imageArea{
             border-right: 1px solid #ffffff;
         }
+        @page {
+            size: A4 landscape;
+            margin: 0;
+            /*size: landscape;*/
+        }
+        @media print {
+            .all-content {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
     </style>
 </head>
 <body>
-<div class="all-content">
+<div class="all-content" id="page">
     <table class="titleTable">
         <thead>
         <tr>
