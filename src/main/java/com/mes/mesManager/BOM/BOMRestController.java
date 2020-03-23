@@ -36,25 +36,7 @@ public class BOMRestController {
         return bomService.sysPartNameGroupDel(req, scc);
     }
 
-    @RequestMapping(value = "/sysPartGet", method = RequestMethod.POST)
-    public RESTful sysPartGet(HttpServletRequest req, Page p) {
-        return bomService.sysPartGet(req, p);
-    }
 
-    @RequestMapping(value = "/sysPartOneGet", method = RequestMethod.POST)
-    public SYS_PART_CD sysPartOneGet(HttpServletRequest req, Page p) {
-        return bomService.sysPartOneGet(req, p);
-    }
-
-    @RequestMapping(value = "/sysPartAdd", method = RequestMethod.POST)
-    public Message sysPartAdd(HttpServletRequest req, SYS_PART_CD spc) {
-        return bomService.sysPartAdd(req, spc);
-    }
-
-    @RequestMapping(value = "/sysPartDel", method = RequestMethod.POST)
-    public Message sysPartDel(HttpServletRequest req, SYS_PART_CD spc) {
-        return bomService.sysPartDel(req, spc);
-    }
 
     @RequestMapping(value = "/sysPartNameGroup2Get", method = RequestMethod.POST)
     public RESTful sysPartNameGroup2Get(HttpServletRequest req, Page p) {

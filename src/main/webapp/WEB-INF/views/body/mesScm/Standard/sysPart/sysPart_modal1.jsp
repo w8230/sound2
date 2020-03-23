@@ -24,6 +24,17 @@
             </div>
         </div>
         <div class="profile-info-row">
+            <div class="profile-info-name">업체</div>
+            <div class="profile-info-value">
+                <div class="input-icon input-icon-right">
+                    <input type="text" name="supp_name" class="form-control h-25 modal_value"
+                           id="supp_name_modal" onclick="supp_btn();" readonly>
+                    <i class="ace-icon fa fa-search dark" style="top: -2px;"></i>
+                </div>
+                <input type="hidden" id="supp_code_modal" name="supp_code" class="form-control modal_value" readonly>
+            </div>
+        </div>
+        <div class="profile-info-row">
             <div class="profile-info-name">단위</div>
             <div class="profile-info-value">
                 <select id="modal_unit_code_select" name="unit_code" class="form-control keyword modal_value" style="width:100%">
@@ -40,7 +51,7 @@
         <div class="profile-info-row">
             <div class="profile-info-name">창고</div>
             <div class="profile-info-value">
-                <select id="modal_cargo_code_select"  name="cargo_code" class="form-control keyword modal_value" style="width:100%">
+                <select id="modal_cargo_code_select"  name="cargo_code" class="form-control keyword modal_value" onchange="cargo_select_change(this.value);" style="width:100%">
                 </select>
             </div>
         </div>
@@ -65,6 +76,6 @@
     </div>
 </div>
 
-
+<%@include file="/WEB-INF/views/body/common/modal/supp_modal.jsp" %>
 
 

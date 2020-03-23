@@ -361,7 +361,7 @@ function select_makes_base(tag,url,value,text,data,what){
 					$(tag).append(option);
 				}
 				$(tag).select2();
-				resolve("성공");
+				resolve(data2);
 			},
 			error: function () {
 				reject(new Error("Request is failed"));

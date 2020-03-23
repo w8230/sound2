@@ -10,15 +10,13 @@ import com.mes.mesManager.Authority.DTO.SYSAuthProgram;
 import com.mes.mesManager.BOM.DTO.SYS_COMMON2_CD;
 import com.mes.mesManager.BOM.DTO.SYS_PART_GROUP2_CD;
 import com.mes.mesManager.BOM.DTO.SYS_PART_NM_CD;
+import com.mes.mesManager.Master.DTO.SYSCargo;
 import com.mes.mesManager.Master.DTO.SYSCommon;
 import com.mes.mesManager.Master.DTO.SYSProdLine;
 import com.mes.mesPop.Standard.DTO.POP_LINE_USER_CD;
 import com.mes.mesPop.Standard.DTO.POP_ROUTE_CD;
 import com.mes.mesQms.Standard.DTO.SYS_QC_ITEM;
-import com.mes.mesScm.Standard.DTO.SYS_PART_GROUP;
-import com.mes.mesScm.Standard.DTO.sysBPart;
-import com.mes.mesScm.Standard.DTO.sysBPartGroup;
-import com.mes.mesScm.Standard.DTO.sysLoc;
+import com.mes.mesScm.Standard.DTO.*;
 import com.mes.mesTpm.Machine.DTO.TPM_MACHINE_CD;
 import com.mes.mesTpm.RegItem.DTO.TPM_REG_ITEM_CD;
 import com.mes.mesWms.Stock.DTO.WMS_STOCK_TOTAL;
@@ -74,7 +72,7 @@ public interface VariousMapper {
 
     List<POP_ROUTE_CD> popRouteGroupAllGet(Page p);
 
-    List<SYS_PART_NM_CD> sysPartNameAllGet(Page p);
+    List<SYS_PART_NAME> sysPartNameAllGet(Page p);
 
     List<SYSProdLine> sysProdLineAllGet(Page p);
 
@@ -83,4 +81,6 @@ public interface VariousMapper {
     List<SYSCommon> sysCommonBoardGet(Page p);
 
     WMS_STOCK_TOTAL wmsStockTotalOneGet(Page p);
+
+    List<SYSCargo> sysCargoAllGet(Page p);
 }
