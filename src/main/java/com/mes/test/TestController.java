@@ -1,8 +1,10 @@
 package com.mes.test;
 
+import com.mes.Common.DataTransferObject.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,11 +18,12 @@ public class TestController {
     @RequestMapping(value = "/test2")
     public String test2(HttpServletRequest req) {
         req.setAttribute("ok","ok");
-
-        return "views/body/Test/test1/test/testimg";
+        return "test2";
     }
-    @GetMapping("/test3")
-    public String test3() {
+    @RequestMapping(value="/test3")
+    public String test3(HttpServletRequest req, Page p) {
+        req.setAttribute("keyword",p.getKeyword());
+
         return "test3";
     }
 }

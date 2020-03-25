@@ -58,7 +58,7 @@
 </div>
 <div class="sector">
     ${ok}
-    <h1>제목</h1>
+    <h1 id="title">제목</h1>
     <table class="table">
         <thead>
         <tr>

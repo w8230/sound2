@@ -9,73 +9,125 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="/ui-component/assets/js/jquery-2.1.4.min.js"></script>
+    <script src="/data-component/common/html2canvas.js"></script>
     <style>
-        table {
-            width: 100%;
-            margin: auto;
-            border: 1px solid #444444;
-            border-collapse: collapse;
+         .page_table {
+            width: 793px !important;
+            margin: auto !important;
+            border: 1px solid #444444 !important;
+            border-collapse: collapse !important;
         }
-        th, td {
-            border: 1px solid #444444;
-            padding: 10px;
+          th,  td {
+            border: 1px solid #444444 !important;
+            padding: 10px !important;
         }
         .theadTitle{
             border-bottom: 1px solid #ffffff !important;
-            width:85%;
-            letter-spacing: 10px;
-            font-size: 21px;
+            width:85% !important;
+            letter-spacing: 10px !important;
+            font-size: 21px !important;
+            text-align: center !important;
         }
-        .signAreaTitle{
-            font-size: 12px;
+         .signAreaTitle{
+            font-size: 12px !important;
+             text-align: center !important;
         }
-        .signArea{
+         .signArea{
             border-bottom: 1px solid #ffffff !important;
-            height: 80px;
+            height: 80px !important;
         }
         .menuTable > tbody > tr > .menu {
-            letter-spacing: 3px;
-            font-size: 13px;
-            width: 10%;
-            background-color: #efefef;
-            text-align: center;
-            font-weight: bold;
+            letter-spacing: 3px !important;
+            font-size: 13px !important;
+            width: 10% !important;
+            background-color: #efefef !important;
+            text-align: center !important;
+            font-weight: bold !important;
         }
         .contentArea{
-            height: 120px;
+            height: 120px !important;
         }
         .LastContentArea{
-            height: 400px;
+            height: 400px !important;
         }
-        .all-content{
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2cm;
-            margin: 1cm auto;
-            border-radius: 5px;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        #all-content{
+            width: 21cm !important;
+            min-height: 29.7cm !important;
+            padding: 2cm !important;
+            margin: 1cm auto !important;
+            border-radius: 5px !important;
+            background: white !important;
+
+            z-index: 100 !important;
         }
-        .smallTable{
-            width: 300px !important;
-            float: right;
+        .smallTable {
+            width: 350px !important;
+            float: right !important;
+            border: none !important;
+
         }
-        .smallTable > tbody > tr > .title {
-            width: 50px;
-            text-align: center;
-            font-size: 12px;
-            letter-spacing: 3px;
+         .smallTable > tbody > tr > .title {
+            width: 100px !important;
+            text-align: center !important;
+            font-size: 12px !important;
+            letter-spacing: 3px !important;
+
         }
+
+         .smalltd {
+            border: 1px solid #444444 !important;
+            padding: 10px !important;
+        }
+
         .footerSign > td{
-            border: 1px solid #ffffff !important;
-            text-align: right;
-            font-size: 12px;
+            border: none !important;
+            text-align: right !important;
+            font-size: 12px !important;
         }
+        #testDiv{
+          position: relative;
+            top: 250px;
+            left: 500px;
+            z-index: 800;
+            font-size: 8px !important;
+        }
+
     </style>
+    <script>
+        //$(function () {
+
+        //
+        //     html2canvas($("#all-content").get(0),{
+        //         //allowTaint: true,
+        //         //taintTest: false,
+        //         //useCORS: true,
+        //         //width:1500,
+        //         //height:1400,
+        //         scale:4,
+        //         onclone: function (clonedDoc) {
+        //             //$(clonedDoc).find("#res").find(".all-content").removeAttr("style");
+        //         }
+        //     }).then(function(canvas) {
+        //         var myImage = canvas.toDataURL("image/png", 1);
+        //         downloadURI(myImage,"test.png");
+        //
+        //     });
+        // });
+        //
+        // function downloadURI(uri,name) {
+        //     var link = document.createElement("a")
+        //     link.download = name;
+        //     link.href = uri;
+        //     document.body.appendChild(link);
+        //     link.click();
+        // }
+    </script>
 </head>
 <body>
-<div class="all-content">
-    <table class="titleTable">
+<div id="all-content"  >
+    <div id="testDiv">${keyword}</div>
+    <table class="titleTable page_table">
         <thead>
         <tr>
             <th colspan="3" rowspan="2" class="theadTitle">작업의뢰서</th>
@@ -87,7 +139,7 @@
 
         </thead>
     </table>
-    <table class="menuTable">
+    <table class="menuTable page_table">
         <tbody>
         <tr>
             <td class="menu">현장명</td>
@@ -131,28 +183,28 @@
             <td colspan="4" class="LastContentArea">
                 <table class="smallTable">
                     <tr>
-                        <td class="title">힌지</td>
+                        <td class="title smalltd">힌지</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="title">핸들</td>
-                        <td></td>
+                        <td class="title smalltd">핸들</td>
+                        <td class="smalltd"></td>
                     </tr>
                     <tr>
-                        <td class="title">데드락</td>
-                        <td></td>
+                        <td class="title smalltd">데드락</td>
+                        <td class="smalltd"></td>
                     </tr>
                     <tr>
-                        <td class="title">힌지</td>
-                        <td></td>
+                        <td class="title smalltd">힌지</td>
+                        <td class="smalltd"></td>
                     </tr>
                     <tr>
-                        <td class="title">레드락</td>
-                        <td></td>
+                        <td class="title smalltd">레드락</td>
+                        <td class="smalltd"></td>
                     </tr>
                     <tr>
-                        <td class="title">도장</td>
-                        <td></td>
+                        <td class="title smalltd">도장</td>
+                        <td class="smalltd"></td>
                     </tr>
                     <tr class="footerSign">
                         <td class="title"></td>

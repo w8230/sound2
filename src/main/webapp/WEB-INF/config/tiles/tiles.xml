@@ -41,6 +41,7 @@
     </definition>
     <!--  body content [e]  -->
 
+    <definition name="test2"  template="/WEB-INF/views/body/Test/test1/test/testimg.jsp"/>
     <definition name="test3"  template="/WEB-INF/views/body/Test/test1/test/test3.jsp"/>
     <definition name="login"  template="/WEB-INF/views/body/login/login.jsp"/>
     <definition name="logout"  template="/WEB-INF/views/body/login/login.jsp"/>
